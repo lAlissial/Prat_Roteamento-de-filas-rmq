@@ -9,9 +9,10 @@ public class EmitLogDirect {
 
     private static final String EXCHANGE_NAME = "direct_logs";
 
-    public static void main(String[] argv) throws Exception {
+    public static void produzir(String[] argv) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
+        factory.setPort(5672);
         factory.setUsername("mqadmin");
         factory.setPassword("Admin123XX_");
 
@@ -53,5 +54,11 @@ public class EmitLogDirect {
         }
 
         return words.toString();
+    }
+
+    public static void main(String[] argv) throws Exception {
+        String[] chavess= {"NOME_COMPLETO","ALISSIA","DEOLINDA","OLIVEIRA","DE","LIMA"};
+        produzir(chavess);
+
     }
 }
